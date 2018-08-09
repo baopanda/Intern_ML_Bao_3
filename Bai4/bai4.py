@@ -15,7 +15,7 @@ def MinDistance(a,j):
         if (distance2 < distance1):
             # print(distance2)
             distance1 = distance2
-    print("Khoang cach min cua con %s là: " % label[j] + str(distance1))
+    print("Khoang cach min cua con %s là: " % label[j] + str(distance1) + " voi time là: "+ a['Time'][i]+" va "+ a['Time'][i-1])
 
 def set_Index(a):
     count = []
@@ -57,6 +57,11 @@ if __name__ == '__main__':
     a4 = df.query("Animal == '%s'" % label[4])
     a5 = df.query("Animal == '%s'" % label[5])
     a6 = df.query("Animal == '%s'" % label[6])
+
+    # data = []
+    # with open("output.txt", "w", encoding='utf-8') as file:
+    #     for i in range(0,len(a0['Time'])):
+    #         file.write(str(a0['UnixTime'][i])+"\t"+str(a0['Time'][i])+"\n")
 
     plt.plot(a0['Long'], a0['Latt'], '#16a085', linewidth=0.5, label=label[0])
     plt.plot(a1['Long'], a1['Latt'], '#c0392b', linewidth=0.5, label=label[1])
